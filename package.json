@@ -1,0 +1,14 @@
+{
+  "name": "comunica-ontology-parser",
+  "version": "0.0.1",
+  "description": "A script to access onotlogies structure via SPARQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julian Rojas",
+  "license": "MIT",
+  "dependencies": {
+    "@comunica/actor-init-sparql": "^1.8.0"
+  }
+}
