@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Example for reading Ontologies</title>
+    <script src="bundle.js"></script>
+    <script>
+        var engine = new Engine('http://hdelva.be/tiles/ns/ontology');
+
+        async function clickGetNI() {
+            let property = document.getElementById('property').value;
+            let namedIndividuals = await engine.getNamedIndividualsForProperty(property);
+            document.getElementById('namedIndividuals').innerText = namedIndividuals.join('\n');
+        }
+
+        async function clickGetEntity() {
+            let entity = document.getElementById('entity').value;
+            let description = await engine.getEntityDescription(entity);
+            document.getElementById('description').innerText = JSON.stringify(description, null, 4);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <span>Property: </span><input id="property" type="url" value="https://w3id.org/openstreetmap/terms#highway"
+            style="width: 400px">
+        <button id="btnGetNI" onclick="clickGetNI()">GetNameIndividuals</button><br>
+        <span id='namedIndividuals'></span>
+    </div>
+    <span>-----------------------------------------------------------------------------------------------------------</span><br>
+    <span>-----------------------------------------------------------------------------------------------------------</span><br>
+    <div>
+        <span>Entity: </span><input id="entity" type="url" value="https://w3id.org/openstreetmap/terms#HorribleSmoothness"
+            style="width: 400px">
+        <button id="btnGetEntity" onclick="clickGetEntity()">GetEntityDescription</button><br>
+        <span id='description'></span>
+    </div>
+</body>
+
+</html>

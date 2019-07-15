@@ -4,11 +4,16 @@
   "description": "A script to access onotlogies structure via SPARQL",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Julian Rojas",
   "license": "MIT",
   "dependencies": {
-    "@comunica/actor-init-sparql": "^1.8.0"
+    "@comunica/actor-init-sparql": "^1.8.0",
+    "webpack": "^4.35.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.6"
   }
 }
